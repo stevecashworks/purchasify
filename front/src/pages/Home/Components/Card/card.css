@@ -1,0 +1,44 @@
+[data-text]{
+ position:relative;
+ transition: all 0.5s ease;
+ top:15px
+}
+
+[data-text]:hover::before, [data-text]:focus::before{
+    content:attr(data-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    color:inherit
+
+
+}
+.info-circle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:18px;
+    width:18px;
+    border-radius: 50%;
+     border:0.5px solid gray;
+     font-size:12px;
+     font-weight:600;
+     text-align: center;
+     text-transform: italicize;
+
+}
+.info-circle:hover{
+    display:none;
+    background:blue
+}
+
+[data-text]:hover::after{
+    position:absolute;
+     content: "";
+     left:50%;
+     opacity:0.2;
+     background-color:white;
+     border-top: 10px solid blueviolet;
+     border-left: 10px solid transparent;
+     border-right: 10px solid transparent;
+     transform:translate(50%,-90%)
+}

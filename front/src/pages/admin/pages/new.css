@@ -1,0 +1,24 @@
+.uploadImg::after{
+    content:"+";
+    position:absolute;
+    width:25px;
+    height:25px;
+    background-color:rgb(57, 209, 57);
+    color:white;
+    display:flex;
+    align-items:center;
+    border-radius:50%;
+    justify-content:center; 
+    right:15px;
+    font-weight:bold;
+    bottom:20px;
+}
+.admin-add-btn{
+    background-color:teal;
+    color:white;
+    border:none;
+    margin:0 auto;
+    width:150px;
+    height:30px;
+    border-radius:15px;
+}

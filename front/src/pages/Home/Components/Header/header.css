@@ -1,0 +1,21 @@
+.option{
+    display:none;
+    font-size:18px;
+    cursor: pointer;
+}
+.header-icon{
+    margin:10px auto;
+    font-size:16px;
+    color:inherit;
+    cursor:pointer;
+}
+@media (max-width:480px){
+    .option{
+        display: block;
+    }
+    .header-icon{
+        margin:10px auto;
+        font-size:16px;
+    
+    }
+}
