@@ -38,7 +38,7 @@ const port=process.env.PORT||5000
 
 const start=async()=>{
 try {
-    await connectDb(process.env.local_Mongo)
+    await connectDb(process.env.mongo_uri)
     server.listen(port,()=>{console.log(`server is listening on port ${port}`)})
     
 } catch (error) {
