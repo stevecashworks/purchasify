@@ -9,13 +9,11 @@
    import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
    import RequestQuoteIcon from '@mui/icons-material/RequestPage';
   import CategoryIcon from '@mui/icons-material/Category';
-  import { CircularProgressbar } from 'react-circular-progressbar'
   import {Container,Categories as Left,Products as Right} from '../Home/home'
   import LinkItem from '../Home/Components/categoryItem'
   import {useId} from 'react'
   import  {CategoryHeader} from '../Home/home'
   import { selectMenuOpen } from '../../redux/slices/menuSlice';
- import 'react-circular-progressbar/dist/styles.css'  
   const Mid=styled.div`
 height:100vh;
 display:flex;
@@ -97,9 +95,7 @@ display:none;
           </WidgetCon>
           <Charts>
             <div style={{width:"200px",height:"200px", display:"flex",alignItems:"center",justifyContent:"center"}}>
-              
-            <CircularProgressbar styles={{stroke:'purple'}} strokeWidth={2} value={70} text={"70%"}/>
-            </div>
+                          </div>
           <Chart/>
           </Charts>
 
