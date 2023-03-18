@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import dotenv from 'dotenv'
-dotenv.config()
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -13,7 +12,7 @@ dotenv.config()
 // configure my environment variables
 
 const firebaseConfig = {
-    apiKey:process.env.REACT_APP_API_KEY,
+    apiKey:AIzaSyD237q9SmzXiKPe_eHuBqVEa0uRFd5YQlY,
   authDomain: "purchasify-c180d.firebaseapp.com",
   projectId: "purchasify-c180d",
   storageBucket: "purchasify-c180d.appspot.com",
