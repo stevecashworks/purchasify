@@ -12,7 +12,7 @@ import { initializeApp } from "firebase/app";
 // configure my environment variables
 
 const firebaseConfig = {
-    apiKey:AIzaSyD237q9SmzXiKPe_eHuBqVEa0uRFd5YQlY,
+    apiKey:"AIzaSyD237q9SmzXiKPe_eHuBqVEa0uRFd5YQlY",
   authDomain: "purchasify-c180d.firebaseapp.com",
   projectId: "purchasify-c180d",
   storageBucket: "purchasify-c180d.appspot.com",
