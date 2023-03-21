@@ -10,6 +10,7 @@ import ThemeController from '../ThemeController';
 import { useSelector,useDispatch } from 'react-redux';
 import { selectIsLogged,selectOtherDetails } from '../../../../redux/slices/userSlice';
 import { selectCart } from '../../../../redux/slices/ShoppingSlice';
+import { Link } from 'react-router-dom';
 const Container=styled.div`
  width:100%;
  display:flex;
@@ -45,14 +46,22 @@ const Container=styled.div`
   display:none;  
  }
  `
- const Link=styled.a`
- text-decoration:none;
- color:inherit;
- margin:auto 10px;
- font-weight:300;
- font-size:13px;
+//  const Link=styled.a`
+//  text-decoration:none;
+//  color:inherit;
+//  margin:auto 10px;
+//  font-weight:300;
+//  font-size:13px;
  
- `
+//  `
+const linkStyle={
+    textDecoration:"none",
+    color:"inherit",
+    margin:"auto 10px",
+    fontWeight:"300",
+    fontSize:"13px",
+   
+}
  const Fav=styled.div`
  `
 const  LogoCon=styled.div`
@@ -97,21 +106,21 @@ const Header=()=>{
                 <LogoText>Purchasify</LogoText>
             </LogoCon>
             <Links>
-            <Link href='#'>24/7 Customer-care</Link>
-            <Link href='#'>Services</Link>
-            <Link href='#'>Join our team</Link>
-            <Link href='#'>Feedback</Link>
+            <Link style={linkStyle} href='#'>24/7 Customer-care </Link>
+            <Link style={linkStyle} href='#'>Services</Link>
+            <Link style={linkStyle} to='/admin'>Admin</Link>
+            <Link style={linkStyle} href='#'>Feedback</Link>
             </Links>
             <FavCon>
                 
                 <ThemeController/>
             <Fav>
                 <MdFavoriteBorder className="header-icon"/>
-                <Link href={isLogged?'/cart':"/register"} style={{display:"inline-block"}}>
+                <Link style={{...linkStyle,display:"inline-block"}} to={isLogged?'/cart':"/register"} >
                     {(("noOfItems" in cart)&&(cart.noOfItems!==0))&&<CartBadge>{cart.noOfItems}</CartBadge>}
                 <AiOutlineShoppingCart className="header-icon"/>
                 </Link>
-                <Link  href={page}>
+                <Link style={linkStyle}  to={page}>
                 <RxAvatar className="header-icon"/>
                     </Link>
                 </Fav>

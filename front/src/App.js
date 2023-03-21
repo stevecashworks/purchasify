@@ -1,6 +1,8 @@
 import './App.css';
 import styled from 'styled-components'
-export const ApiEntry="https://purchapi.onrender.com/api/v3"
+// const localApi="http://localhost:8080"
+const webApi="https://purchapi.onrender.com"
+export const ApiEntry=`${webApi}/api/v3`
   export const AppCon= styled.div`
     width:100%
     overflow-x:hidden;

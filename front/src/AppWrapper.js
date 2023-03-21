@@ -1,4 +1,4 @@
-import { BrowserRouter as Router ,Routes,Route } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // function that protects our Route
 
 //  Routes
@@ -13,7 +13,7 @@ import Products from './pages/admin/pages/products'
 import Orders from './pages/admin/pages/orders'
 import EditProduct from './pages/admin/pages/editProduct'
 import { useEffect } from 'react'
-import {addToCart,selectCart,selectSearch, setProducts,selectRange,selectCategory} from './redux/slices/ShoppingSlice';
+import {addToCart,selectSearch, setProducts,selectRange,selectCategory} from './redux/slices/ShoppingSlice';
 import { setIsLogged,setOtherDetails,selectIsLogged,selectOtherDetails } from './redux/slices/userSlice';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -62,26 +62,21 @@ const  Wrapper=()=>{
 
   
     const {isAdmin}= useSelector(selectOtherDetails)
+    const router=createBrowserRouter([
+      {path:'/', element:<Home/>},
+      {path:'/product/:id', element:<SingleProduct/>},
+      {path:'/admin', element:<Admin/>},
+      {path:'/register', element:<Register/>},
+      {path:'/login', element:<Login/>},
+      {path:'/admin/users', element:<Users/>},
+      {path:'/admin/products', element:<Products/>},
+      {path:'/admin/orders', element:<Orders/>},
+      {path:'/admin/editproduct/:id', element:<EditProduct/>},
+      {path:'/cart', element:<Cart/>}
+    ])
 
 return(
-    <Router>
-    <Routes>
-    <Route path='/' exact element={<Home/>} />
-    <Route path='/product/:id' exact element={<SingleProduct/>} />
-    <Route path='/admin' exact element={/*decideRoute(isAdmin,Admin,'/')*/<Admin/>}/>
-    <Route path='/register' exact element={<Register/>} />
-    <Route path='/login' exact element={<Login/>} />
-    <Route path='/admin/users' exact element={<Users/>} />
-    <Route path='/admin/products' exact element={<Products/>} />
-    <Route path='/admin/orders' exact element={<Orders/>} />
-    <Route path='/admin/orders' exact element={<Orders/>} />
-    <Route path='/admin/editproduct/:id' exact element={<EditProduct/>} />
-    <Route path='/cart' exact element={<Cart/>} />
-     
-
-    </Routes>
-
-    </Router>
+    <RouterProvider router={router}/>
     
 )
 }

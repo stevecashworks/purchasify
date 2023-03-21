@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Header from '../../Home/Components/Header/Header';
-import { AppCon } from '../../../App';
+import { ApiEntry, AppCon } from '../../../App';
 import  {selectPattern,selectTheme} from '../../../redux/slices/themes'
 import  {selectMenuOpen} from '../../../redux/slices/menuSlice'
 import { useSelector,useDispatch} from 'react-redux';
@@ -83,7 +83,7 @@ const Users=()=>{
      const proceed=window.confirm("are you sure you want to delete this user?")
    if(proceed){
       console.log(id)
-     await fetch(`http://localhost:8080/api/v3/user/delete/${id}`,{
+     await fetch(`${ApiEntry}/user/delete/${id}`,{
        method:'DELETE',
       headers:{
           "Content-Type":"application/json"

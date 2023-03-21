@@ -4,6 +4,7 @@ import { AppCon } from '../../../App';
 import  {selectPattern,selectTheme} from '../../../redux/slices/themes'
 import  {selectMenuOpen} from '../../../redux/slices/menuSlice'
 import { useSelector } from 'react-redux';
+import { selectUsers,selectProducts } from '../../../redux/slices/adminSlice';
 import Widget from '.././components/Widgets/Widget';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
  import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
@@ -53,9 +54,11 @@ gap:30px;
 `
 
 const Orders=()=>{
+  const allProducts=useSelector(selectProducts)
+  const allUsers=useSelector(selectUsers)
   const widgetData=[
-  {title:"Users",icon:PersonOutlineIcon,perc:30,no:35000,id:useId()},
-  {title:"Products",icon:CategoryIcon,perc:80,no:48000 ,id:useId()},
+  {title:"Users",icon:PersonOutlineIcon,perc:30,no:allUsers.length,id:useId()},
+  {title:"Products",icon:CategoryIcon,perc:80,no:allProducts.length ,id:useId()},
   {title:"Orders",icon:RequestQuoteIcon,perc:50,no:65000,id:useId()}
   ]
   const  linkData=[

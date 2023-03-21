@@ -3,9 +3,11 @@
   import { AppCon } from '../../App';
   import  {selectPattern,selectTheme} from '../../redux/slices/themes'
   import { useSelector } from 'react-redux';
+  import { selectProducts,selectUsers } from '../../redux/slices/adminSlice';
+
   import Chart from './components/Chart/Chart';
   import Widget from './components/Widgets/Widget';
-  import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+  // import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
    import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
    import RequestQuoteIcon from '@mui/icons-material/RequestPage';
   import CategoryIcon from '@mui/icons-material/Category';
@@ -58,16 +60,18 @@ display:none;
 
   const Admin=()=>{
     const menuOpen=useSelector(selectMenuOpen)
+    const allProducts=useSelector(selectProducts)
+    const allUsers=useSelector(selectUsers)
     const widgetData=[
-    {title:"Users",icon:PersonOutlineIcon,perc:30,no:0,id:useId(),path:"/admin/users"},
-    {title:"Products",icon:CategoryIcon,perc:80,no:0 ,id:useId(),path:"/admin/products"},
+    {title:"Users",icon:PersonOutlineIcon,perc:30,no:allUsers.length,id:useId(),path:"/admin/users"},
+    {title:"Products",icon:CategoryIcon,perc:80,no:allProducts.length ,id:useId(),path:"/admin/products"},
     {title:"Orders",icon:RequestQuoteIcon,perc:50,no:0,id:useId(),path:"/admin/orders"}
     ]
     const  linkData=[
       {text:"Users",icon:PersonOutlineIcon,id:useId(),col:"purple ",path:"admin/users" },
       {text:"Products",icon:CategoryIcon,id:useId() ,col:"purple",path:"admin/products"} ,
-      {text:"Orders",icon:RequestQuoteIcon, id:useId(),col:"purple",path:"admin/orders"},
-      {text:"Deliveries",icon:DeliveryDiningIcon, id:useId(),col:"purple",path:"admin/deliveries"}
+      {text:"Orders",icon:RequestQuoteIcon, id:useId(),col:"purple",path:"admin/orders"}
+      // {text:"Deliveries",icon:DeliveryDiningIcon, id:useId(),col:"purple",path:"admin/deliveries"}
     
     ]
 
