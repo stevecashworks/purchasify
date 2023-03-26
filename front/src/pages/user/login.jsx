@@ -1,7 +1,7 @@
 import {useRef}from 'react';
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-import { ApiEntry } from '../../App';
+import { ApiEntry as apiEntry } from '../../App';
 const Container=styled.div`
 display:grid;
 place-items:center;

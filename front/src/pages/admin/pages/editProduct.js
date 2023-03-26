@@ -4,7 +4,7 @@ import {ApiEntry} from '../../../App'
 import  {useState,useEffect,useRef} from 'react';
 import { Link } from 'react-router-dom';
 import {MdOutlineKeyboardBackspace} from 'react-icons/md'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, redirect } from 'react-router-dom';
 import submit from './submit';
 const Container=styled.div`
 width:100%;
